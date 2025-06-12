@@ -38,6 +38,9 @@ API documentation is available [here](https://IntersectMBO.github.io/cardano-add
 
 ```console
 $ cardano-address recovery-phrase generate --size 15 > phrase.prv
+```
+expect to see:
+```console
 exercise club noble adult miracle awkward problem olympic puppy private goddess piano fatal fashion vacuum
 ```
 
@@ -46,10 +49,16 @@ exercise club noble adult miracle awkward problem olympic puppy private goddess 
 
 ```console
 $ cardano-address key from-recovery-phrase Shelley < phrase.prv > root.xsk
+```
+expect to see:
+```console
 root_xsk1hqzfzrgskgnpwskxxrv5khs7ess82ecy8za9l5ef7e0afd2849p3zryje8chk39nxtva0sww5me3pzkej4rvd5cae3q3v8eu7556n6pdrp4fdu8nsglynpmcppxxvfdyzdz5gfq3fefjepxhvqspmuyvmvqg8983
 
 -- which is equivalent to empty passphrase
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-hex
+```
+expect to see:
+```console
 Please enter a [9, 12, 15, 18, 21, 24] word mnemonic:
 exercise club noble adult miracle awkward problem olympic puppy private goddess piano fatal fashion vacuum
 Please enter hex-encoded passphrase:
@@ -64,9 +73,15 @@ root_xsk1hqzfzrgskgnpwskxxrv5khs7ess82ecy8za9l5ef7e0afd2849p3zryje8chk39nxtva0sw
 
 ```console
 $ cardano-address recovery-phrase generate --size 9 > sndfactor.prv
+```
+expect to see:
+```console
 swing payment diagram happy chimney mammal flip become lyrics
 
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-mnemonic
+```
+expect to see:
+```console
 Please enter a [9, 12, 15, 18, 21, 24] word mnemonic:
 exercise club noble adult miracle awkward problem olympic puppy private goddess piano fatal fashion vacuum
 Please enter a 9–12 word second factor:
@@ -81,6 +96,9 @@ Please enter a 9–12 word second factor:
 root_xsk1jqx0xpke7de69ceyk20tdl9rq7nsava7cfnyeu42yqum8usnpppwmsxn2qsfj0nn2ur2kuq0kmrll67ryvkdhd6pgpsls6s6qx7hlyv6uqt0907t73eflkpw3xz45lcg5fsh6dunfk56j08jslh6x6rttspfny8c
 
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-mnemonic --silent
+```
+expect to see:
+```console
 Please enter a [9, 12, 15, 18, 21, 24] word mnemonic:
 
 Please enter a 9–12 word second factor:
@@ -88,9 +106,15 @@ Please enter a 9–12 word second factor:
 root_xsk1jqx0xpke7de69ceyk20tdl9rq7nsava7cfnyeu42yqum8usnpppwmsxn2qsfj0nn2ur2kuq0kmrll67ryvkdhd6pgpsls6s6qx7hlyv6uqt0907t73eflkpw3xz45lcg5fsh6dunfk56j08jslh6x6rttspfny8c
 
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-mnemonic --from-file "./sndfactor.prv" < phrase.prv
+```
+expect to see:
+```console
 root_xsk1jqx0xpke7de69ceyk20tdl9rq7nsava7cfnyeu42yqum8usnpppwmsxn2qsfj0nn2ur2kuq0kmrll67ryvkdhd6pgpsls6s6qx7hlyv6uqt0907t73eflkpw3xz45lcg5fsh6dunfk56j08jslh6x6rttspfny8c
 
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-hex
+```
+expect to see:
+```console
 Please enter a [9, 12, 15, 18, 21, 24] word mnemonic:
 exercise club noble adult miracle awkward problem olympic puppy private goddess piano fatal fashion vacuum
 Please enter hex-encoded passphrase:
@@ -98,10 +122,19 @@ dc1434f3b472810d56409f85
 root_xsk1jqx0xpke7de69ceyk20tdl9rq7nsava7cfnyeu42yqum8usnpppwmsxn2qsfj0nn2ur2kuq0kmrll67ryvkdhd6pgpsls6s6qx7hlyv6uqt0907t73eflkpw3xz45lcg5fsh6dunfk56j08jslh6x6rttspfny8c
 
 $ echo "dc1434f3b472810d56409f85" > base16.prv
+```
+expect to see:
+```console
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-hex --from-file "./base16.prv" < phrase.prv
+```
+expect to see:
+```console
 root_xsk1jqx0xpke7de69ceyk20tdl9rq7nsava7cfnyeu42yqum8usnpppwmsxn2qsfj0nn2ur2kuq0kmrll67ryvkdhd6pgpsls6s6qx7hlyv6uqt0907t73eflkpw3xz45lcg5fsh6dunfk56j08jslh6x6rttspfny8c
 
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-base64
+```
+expect to see:
+```console
 Please enter a [9, 12, 15, 18, 21, 24] word mnemonic:
 exercise club noble adult miracle awkward problem olympic puppy private goddess piano fatal fashion vacuum
 Please enter base64-encoded passphrase:
@@ -109,10 +142,19 @@ Please enter base64-encoded passphrase:
 root_xsk1jqx0xpke7de69ceyk20tdl9rq7nsava7cfnyeu42yqum8usnpppwmsxn2qsfj0nn2ur2kuq0kmrll67ryvkdhd6pgpsls6s6qx7hlyv6uqt0907t73eflkpw3xz45lcg5fsh6dunfk56j08jslh6x6rttspfny8c
 
 $ echo "3BQ087RygQ1WQJ+F" > base64.prv
+```
+expect to see:
+```console
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-base64 --from-file "./base64.prv" < phrase.prv
+```
+expect to see:
+```console
 root_xsk1jqx0xpke7de69ceyk20tdl9rq7nsava7cfnyeu42yqum8usnpppwmsxn2qsfj0nn2ur2kuq0kmrll67ryvkdhd6pgpsls6s6qx7hlyv6uqt0907t73eflkpw3xz45lcg5fsh6dunfk56j08jslh6x6rttspfny8c
 
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-octets
+```
+expect to see:
+```console
 Please enter a [9, 12, 15, 18, 21, 24] word mnemonic:
 exercise club noble adult miracle awkward problem olympic puppy private goddess piano fatal fashion vacuum
 Please enter passphrase in the form of octet array:
@@ -120,10 +162,19 @@ Please enter passphrase in the form of octet array:
 root_xsk1jqx0xpke7de69ceyk20tdl9rq7nsava7cfnyeu42yqum8usnpppwmsxn2qsfj0nn2ur2kuq0kmrll67ryvkdhd6pgpsls6s6qx7hlyv6uqt0907t73eflkpw3xz45lcg5fsh6dunfk56j08jslh6x6rttspfny8c
 
 $ echo "[220,20,52,243,180,114,129,13,86,64,159,133]" > octets.prv
+```
+expect to see:
+```console
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-octets --from-file "./octets.prv" < phrase.prv
+```
+expect to see:
+```console
 root_xsk1jqx0xpke7de69ceyk20tdl9rq7nsava7cfnyeu42yqum8usnpppwmsxn2qsfj0nn2ur2kuq0kmrll67ryvkdhd6pgpsls6s6qx7hlyv6uqt0907t73eflkpw3xz45lcg5fsh6dunfk56j08jslh6x6rttspfny8c
 
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-utf8
+```
+expect to see:
+```console
 Please enter a [9, 12, 15, 18, 21, 24] word mnemonic:
 exercise club noble adult miracle awkward problem olympic puppy private goddess piano fatal fashion vacuum
 Please enter utf8-encoded passphrase:
@@ -131,6 +182,9 @@ my secret passphrase
 root_xsk1aq5jduvnx7s6a4wl845jggvnhey5agqjv55dsexsx43np59pse0u4yfxpdfecz9h95jwecduqpt7zlk97j9mprmvjcfeyrcu9nyagpjq6k5cxpnwve5pj3cu24m9my94xtrqvzrlmu0893guffzazyk95cvprwzp
 
 $ cardano-address key from-recovery-phrase Shelley --passphrase ""
+```
+expect to see:
+```console
 Please enter a [9, 12, 15, 18, 21, 24] word mnemonic:
 exercise club noble adult miracle awkward problem olympic puppy private goddess piano fatal fashion vacuum
 Please enter utf8-encoded passphrase:
@@ -138,7 +192,13 @@ my secret passphrase
 root_xsk1aq5jduvnx7s6a4wl845jggvnhey5agqjv55dsexsx43np59pse0u4yfxpdfecz9h95jwecduqpt7zlk97j9mprmvjcfeyrcu9nyagpjq6k5cxpnwve5pj3cu24m9my94xtrqvzrlmu0893guffzazyk95cvprwzp
 
 $ echo "my secret passphrase" > utf8.prv
+```
+expect to see:
+```console
 $ cardano-address key from-recovery-phrase Shelley --passphrase from-utf8 --from-file "./utf8.prv" < phrase.prv
+```
+expect to see:
+```console
 root_xsk1aq5jduvnx7s6a4wl845jggvnhey5agqjv55dsexsx43np59pse0u4yfxpdfecz9h95jwecduqpt7zlk97j9mprmvjcfeyrcu9nyagpjq6k5cxpnwve5pj3cu24m9my94xtrqvzrlmu0893guffzazyk95cvprwzp
 
 -- NOTE:
@@ -163,19 +223,40 @@ root_xsk1aq5jduvnx7s6a4wl845jggvnhey5agqjv55dsexsx43np59pse0u4yfxpdfecz9h95jwecd
 
 ```console
 $ cat root.xsk
+```
+expect to see:
+```console
 root_xsk1hqzfzrgskgnpwskxxrv5khs7ess82ecy8za9l5ef7e0afd2849p3zryje8chk39nxtva0sww5me3pzkej4rvd5cae3q3v8eu7556n6pdrp4fdu8nsglynpmcppxxvfdyzdz5gfq3fefjepxhvqspmuyvmvqg8983
 $ cardano-address key walletid < root.xsk
+```
+expect to see:
+```console
 163ea20ad0611e4815a61c44bb32c82a81538999
 
 $ cardano-address key public --with-chain-code < root.xsk | cardano-address key walletid
+```
+expect to see:
+```console
 163ea20ad0611e4815a61c44bb32c82a81538999
 
 $ cardano-address key child 1852H/1815H/0H < root.xsk > acct.xsk
+```
+expect to see:
+```console
 $ cat acct.xsk
+```
+expect to see:
+```console
 acct_xsk15ztha8ws7qjze5vmdkwqh0ddzvtlgstkg79swazhc5lxns2849plr3msjx082mcmd9hc24ujczk2cjnjwrcz4tjaucw9jqf8h5yc7d84rac0zdckkuhazpam0kleg4sq52ph3e0wn98a64hr8g5cpmh9zqpwtrhy
 $ cardano-address key walletid < acct.xsk
+```
+expect to see:
+```console
 15fd6c2130b0758ec7995bf9771d2a6602417c39
 $ cardano-address key public --with-chain-code < acct.xsk | cardano-address key walletid
+```
+expect to see:
+```console
 15fd6c2130b0758ec7995bf9771d2a6602417c39
 ```
 
@@ -184,24 +265,45 @@ $ cardano-address key public --with-chain-code < acct.xsk | cardano-address key 
 
 ```console
 $ cardano-address key from-recovery-phrase Shared < phrase.prv > root.shared_xsk
+```
+expect to see:
+```console
 root_shared_xsk1hqzfzrgskgnpwskxxrv5khs7ess82ecy8za9l5ef7e0afd2849p3zryje8chk39nxtva0sww5me3pzkej4rvd5cae3q3v8eu7556n6pdrp4fdu8nsglynpmcppxxvfdyzdz5gfq3fefjepxhvqspmuyvmvzteqlc
 
 $ cardano-address key child 1854H/1815H/0H < root.shared_xsk > acct.shared_xsk
+```
+expect to see:
+```console
 acct_shared_xsk14zh0kh0geaz9qpxv6q0n5upq8ux4n97u2gyl69mnhan74w6849pa3hj2p40xg0nugw8tzqu5eynzjunay6tffru9wdjank0phsfuc7vngjsmtktel05g6mx555tw8nxr8rpn2gac6km5plu9mwqsz54rfyhwd7pd
 
 $ cardano-address key walletid < acct.shared_xsk
+```
+expect to see:
+```console
 user error (shared wallet needs to have at least spending script specified)
 
 $ cardano-address key walletid --spending "cosigner#0" < acct.shared_xsk
+```
+expect to see:
+```console
 185d3582fc4892c4528614210b13e9a775dd7d02
 
 $ cardano-address key public --with-chain-code < acct.shared_xsk | cardano-address key walletid --spending "cosigner#0"
+```
+expect to see:
+```console
 185d3582fc4892c4528614210b13e9a775dd7d02
 
 $ cardano-address key walletid --spending "all [cosigner#0, active_until 1000]" < acct.shared_xsk
+```
+expect to see:
+```console
 42ecb214586dcbcb593688fb081784fa0aebb2c0
 
 $ cardano-address key walletid --spending "all [cosigner#0, active_until 1000]" --staking "cosigner#1" < acct.shared_xsk
+```
+expect to see:
+```console
 12dc98557a4c5aa00575c5d1f0dbfa3837261e32
 ```
 
@@ -211,19 +313,37 @@ $ cardano-address key walletid --spending "all [cosigner#0, active_until 1000]" 
 
 ```console
 $ cardano-address key child 1855H/1815H/0H < root.xsk > policy.xsk
+```
+expect to see:
+```console
 policy_xsk1hr47zvxgzeeutgq50r965ygwxys86cwp8wdjqftlhan8mw6849pus6vc50dznjs5vkyjcz9usl6964u6nha88slrh8hyex74xnlfehcrkp80cp8wgzkqh22dzy7c48ekhhvvf2zz8hqakjwgfzgrjq5lx538et75
 
 $ cardano-address key child 1855H/1815H/0H < root.xsk | cardano-address key public --with-chain-code > policy.xvk
+```
+expect to see:
+```console
 policy_xvk1e9ngmlhcwhszwyuxwc7anwk6tvzwndldz7j262rvfpd049tq74mq8vzwlszwus9vpw556yfa320nd0wccj5yy0wpmdyusjys8ypf7dgaauf0m
 
 $ cardano-address key child 1855H/1815H/0H < root.xsk | cardano-address key public --without-chain-code > policy.vk
+```
+expect to see:
+```console
 policy_vk1e9ngmlhcwhszwyuxwc7anwk6tvzwndldz7j262rvfpd049tq74mq0ylkrs
 
 $ cardano-address key hash < policy.xvk
+```
+expect to see:
+```console
 policy_vkh1qpc9xly4lc7yt98gcf59kdcqcss6dda4u9g72e775yxpxeypamc
 $ cardano-address key hash < policy.vk
+```
+expect to see:
+```console
 policy_vkh1qpc9xly4lc7yt98gcf59kdcqcss6dda4u9g72e775yxpxeypamc
 $ cardano-address key hash < policy.vk | bech32
+```
+expect to see:
+```console
 0070537c95fe3c4594e8c2685b3700c421a6b7b5e151e567dea10c13
 ```
 
@@ -235,6 +355,9 @@ $ cardano-address key hash < policy.vk | bech32
 
 ```console
 $ cardano-address key child 1852H/1815H/0H/0/0 < root.xsk | cardano-address key public --with-chain-code > addr.xvk
+```
+expect to see:
+```console
 addr_xvk1grvg8qzmkmw2n0dm4pd0h3j4dv6yglyammyp733eyj629dc3z28v6wk22nfmru6xz0vl2s3y5xndyd57fu70hrt84c6zkvlwx6fdl7ct9j7yc
 ```
 
@@ -246,6 +369,9 @@ addr_xvk1grvg8qzmkmw2n0dm4pd0h3j4dv6yglyammyp733eyj629dc3z28v6wk22nfmru6xz0vl2s3
 
 ```console
 $ cardano-address key child 1852H/1815H/0H/2/0 < root.xsk | cardano-address key public --with-chain-code > stake.xvk
+```
+expect to see:
+```console
 stake_xvk1658atzttunamzn80204khrg0qfdk5nvmrutlmmpg7xlsyaggwa7h9z4smmeqsvs67qhyqmc2lqa0vy36rf2la74ym8a5p93zp4qtpuq6ky3ve
 ```
 
@@ -256,6 +382,9 @@ stake_xvk1658atzttunamzn80204khrg0qfdk5nvmrutlmmpg7xlsyaggwa7h9z4smmeqsvs67qhyqm
 
 ```console
 $ cardano-address key child 1852H/1815H/0H/2/0 < root.xsk | cardano-address key public --without-chain-code > stake.vk
+```
+expect to see:
+```console
 stake_vk1658atzttunamzn80204khrg0qfdk5nvmrutlmmpg7xlsyaggwa7sg87an2
 ```
 
@@ -266,10 +395,19 @@ stake_vk1658atzttunamzn80204khrg0qfdk5nvmrutlmmpg7xlsyaggwa7sg87an2
 
 ```console
 $ cardano-address key child 1852H/1815H/0H/0/0 < root.xsk | cardano-address key public --with-chain-code > addr.xvk
+```
+expect to see:
+```console
 addr_xvk1grvg8qzmkmw2n0dm4pd0h3j4dv6yglyammyp733eyj629dc3z28v6wk22nfmru6xz0vl2s3y5xndyd57fu70hrt84c6zkvlwx6fdl7ct9j7yc
 $ cardano-address key hash < addr.xvk
+```
+expect to see:
+```console
 addr_vkh12j28hnmtwcp3n08vy58vyf0arnnrhtavu3lrfdztw0j0jng3d6v
 $ cardano-address key hash < addr.xvk | bech32
+```
+expect to see:
+```console
 54947bcf6b760319bcec250ec225fd1ce63baface47e34b44b73e4f9
 ```
 
@@ -281,6 +419,9 @@ $ cardano-address key hash < addr.xvk | bech32
 
 ```console
 $ cardano-address address payment --network-tag testnet < addr.xvk > payment.addr
+```
+expect to see:
+```console
 addr_test1vp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f7guscp6v
 ```
 
@@ -290,8 +431,14 @@ addr_test1vp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f7guscp6v
 
 ```console
 $ cardano-address key child 1852H/1815H/0H/0/0 < root.xsk | cardano-address key public --without-chain-code > addr.vk
+```
+expect to see:
+```console
 addr_vk1grvg8qzmkmw2n0dm4pd0h3j4dv6yglyammyp733eyj629dc3z28qwq4y73
 $ cardano-address address payment --network-tag testnet < addr.vk > payment.addr
+```
+expect to see:
+```console
 addr_test1vp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f7guscp6v
 ```
 
@@ -301,8 +448,14 @@ addr_test1vp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f7guscp6v
 
 ```console
 $ cardano-address key hash < addr.xvk > addr.vkh
+```
+expect to see:
+```console
 addr_vkh12j28hnmtwcp3n08vy58vyf0arnnrhtavu3lrfdztw0j0jng3d6v
 $ cardano-address address payment --network-tag testnet < addr.vkh > payment.addr
+```
+expect to see:
+```console
 addr_test1vp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f7guscp6v
 ```
 
@@ -312,6 +465,9 @@ addr_test1vp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f7guscp6v
 
 ```console
 $ cardano-address address delegation $(cat stake.xvk) < payment.addr > base.addr
+```
+expect to see:
+```console
 addr_test1qp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f70k6tew7wrnx0s4465nx05ajz890g44z0kx6a3gsnms4c4qq8ve0n
 ```
 
@@ -320,8 +476,14 @@ addr_test1qp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f70k6tew7wrnx0s4465nx05ajz
 
 ```console
 $ cardano-address key child 1852H/1815H/0H/2/0 < root.xsk | cardano-address key public --without-chain-code > stake.vk
+```
+expect to see:
+```console
 stake_vk1658atzttunamzn80204khrg0qfdk5nvmrutlmmpg7xlsyaggwa7sg87an2
 $ cardano-address address delegation $(cat stake.vk) < payment.addr > base.addr
+```
+expect to see:
+```console
 addr_test1qp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f70k6tew7wrnx0s4465nx05ajz890g44z0kx6a3gsnms4c4qq8ve0n
 ```
 
@@ -330,8 +492,14 @@ addr_test1qp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f70k6tew7wrnx0s4465nx05ajz
 
 ```console
 $ cardano-address key hash < stake.xvk > stake.vkh
+```
+expect to see:
+```console
 stake_vkh17mf09mecwve7zkh2jve7nkggu4azk5f7cmtk9zz0wzhz5efq2w6
 $ cardano-address address delegation $(cat stake.vkh) < payment.addr > base.addr
+```
+expect to see:
+```console
 addr_test1qp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f70k6tew7wrnx0s4465nx05ajz890g44z0kx6a3gsnms4c4qq8ve0n
 ```
 
@@ -340,6 +508,9 @@ addr_test1qp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f70k6tew7wrnx0s4465nx05ajz
 
 ```console
 $ cardano-address address stake --network-tag testnet < stake.xvk > stake.addr
+```
+expect to see:
+```console
 stake_test1urmd9uh08pen8c26a2fn86weprjh52638mrdwc5gfac2u2s25zpat
 ```
 
@@ -348,6 +519,9 @@ stake_test1urmd9uh08pen8c26a2fn86weprjh52638mrdwc5gfac2u2s25zpat
 
 ```console
 $ cardano-address address stake --network-tag testnet < stake.vk > stake.addr
+```
+expect to see:
+```console
 stake_test1urmd9uh08pen8c26a2fn86weprjh52638mrdwc5gfac2u2s25zpat
 ```
 
@@ -356,8 +530,14 @@ stake_test1urmd9uh08pen8c26a2fn86weprjh52638mrdwc5gfac2u2s25zpat
 
 ```console
 $ cardano-address key hash < stake.xvk > stake.vkh
+```
+expect to see:
+```console
 stake_vkh17mf09mecwve7zkh2jve7nkggu4azk5f7cmtk9zz0wzhz5efq2w6
 $ cardano-address address stake --network-tag testnet < stake.vkh > stake.addr
+```
+expect to see:
+```console
 stake_test1urmd9uh08pen8c26a2fn86weprjh52638mrdwc5gfac2u2s25zpat
 ```
 
@@ -366,6 +546,9 @@ stake_test1urmd9uh08pen8c26a2fn86weprjh52638mrdwc5gfac2u2s25zpat
 
 ```console
 $ echo addr_test1vp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f7guscp6v | cardano-address address inspect
+```
+expect to see:
+```console
 {
     "stake_reference": "none",
     "spending_key_hash_bech32": "addr_vkh12j28hnmtwcp3n08vy58vyf0arnnrhtavu3lrfdztw0j0jng3d6v",
@@ -376,6 +559,9 @@ $ echo addr_test1vp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f7guscp6v | cardano
 }
 
 $ echo addr_test1qp2fg770ddmqxxduasjsas39l5wwvwa04nj8ud95fde7f70k6tew7wrnx0s4465nx05ajz890g44z0kx6a3gsnms4c4qq8ve0n | cardano-address address inspect
+```
+expect to see:
+```console
 {
     "stake_reference": "by value",
     "stake_key_hash_bech32": "stake_vkh17mf09mecwve7zkh2jve7nkggu4azk5f7cmtk9zz0wzhz5efq2w6",
@@ -411,6 +597,9 @@ Let's generate extended root private key for shared style:
 
 ``` console
 $ cardano-address key from-recovery-phrase Shared < phrase.prv > root_shared.xsk
+```
+expect to see:
+```console
 root_shared_xsk1hqzfzrgskgnpwskxxrv5khs7ess82ecy8za9l5ef7e0afd2849p3zryje8chk39nxtva0sww5me3pzkej4rvd5cae3q3v8eu7556n6pdrp4fdu8nsglynpmcppxxvfdyzdz5gfq3fefjepxhvqspmuyvmvzteqlc
 ```
 
@@ -418,6 +607,9 @@ Now generate payment verification key (`role=0` is used). Please note that purpo
 
 ```console
 $ cardano-address key child 1854H/1815H/0H/0/0 < root_shared.xsk | cardano-address key public --without-chain-code > addr_shared.vk
+```
+expect to see:
+```console
 addr_shared_vk1a9h46rvjnqquxz02zyesh0ct29szh7vv9x7r2h87ttmnkgrfgguqhz0mtc
 ```
 
@@ -425,6 +617,9 @@ Generating delegation verification key is the similar (the only difference is ro
 
 ```console
 $ cardano-address key child 1854H/1815H/0H/2/0 < root_shared.xsk | cardano-address key public --without-chain-code > stake_shared.vk
+```
+expect to see:
+```console
 stake_shared_vk18a8z5dcrlwene88n84j6dm9yvj5rt296fjtresqnunmacetdcymquyq43z
 ```
 
@@ -437,10 +632,19 @@ We consider `addr_shared.1.vk` and `addr_shared.2.vk` obtained like `addr_shared
 
 ```console
 $ cardano-address key child 1854H/1815H/0H/0/1 < root_shared.xsk | cardano-address key public --without-chain-code > addr_shared.1.vk
+```
+expect to see:
+```console
 addr_shared_vk1wgj79fxw2vmxkp85g88nhwlflkxevd77t6wy0nsktn2f663wdcmqcd4fp3
 $ cardano-address key child 1854H/1815H/0H/0/2 < root_shared.xsk | cardano-address key public --without-chain-code > addr_shared.2.vk
+```
+expect to see:
+```console
 addr_shared_vk1jthguyss2vffmszq63xsmxlpc9elxnvdyaqk7susl4sppp2s9xqsuszh44
 $ cardano-address script hash "all [$(cat addr_shared.1.vk), $(cat addr_shared.2.vk)]" > script.hash
+```
+expect to see:
+```console
 script1gr69m385thgvkrtspk73zmkwk537wxyxuevs2u9cukglvtlkz4k
 ```
 
@@ -450,10 +654,19 @@ We can also use extended verification, eiher payment or delegation, keys. They c
 
 ```console
 $ cardano-address key child 1854H/1815H/0H/0/1 < root_shared.xsk | cardano-address key public --with-chain-code > addr_shared.1.xvk
+```
+expect to see:
+```console
 addr_shared_xvk1wgj79fxw2vmxkp85g88nhwlflkxevd77t6wy0nsktn2f663wdcmqhlfft3dn0qcn6q99dvlfl2ws5duy6w65zks5jgufe60fg839sysavl5pc
 $ cardano-address key child 1854H/1815H/0H/0/2 < root_shared.xsk | cardano-address key public --with-chain-code > addr_shared.2.xvk
+```
+expect to see:
+```console
 addr_shared_xvk1jthguyss2vffmszq63xsmxlpc9elxnvdyaqk7susl4sppp2s9xq3zegcxtslhpghmadrlvsphssfjqp3mxg9gca27e35wpu43lqjqnsmjvxuw
 $ cardano-address script hash "all [$(cat addr_shared.1.xvk), $(cat addr_shared.2.xvk)]"
+```
+expect to see:
+```console
 script1gr69m385thgvkrtspk73zmkwk537wxyxuevs2u9cukglvtlkz4k
 ```
 
@@ -461,6 +674,9 @@ which is equivalent (functionally, but not in terms of hash value) to :
 
 ```console
 $ cardano-address script hash "at_least 1 [$(cat addr_shared.1.xvk), $(cat addr_shared.2.xvk)]"
+```
+expect to see:
+```console
 script13uf3fz3ts5srpjc5zcfe977uvnyvp36wcvxuudryegz0zpjlx6a
 ```
 
@@ -469,6 +685,9 @@ script13uf3fz3ts5srpjc5zcfe977uvnyvp36wcvxuudryegz0zpjlx6a
 
 ```console
 $  cardano-address script hash "all [$(cat addr_shared.1.xvk), $(cat addr_shared.2.xvk), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 script1nugjzwfs2t9htl7s3dv9ajnd5us8pctpa8aj4ank8dnd6d6unul
 ```
 
@@ -478,9 +697,15 @@ script1nugjzwfs2t9htl7s3dv9ajnd5us8pctpa8aj4ank8dnd6d6unul
 
 ```console
 $  cardano-address script validate "at_least 1 [$(cat addr_shared.1.xvk), $(cat addr_shared.2.xvk), $(cat addr_shared.2.xvk)]"
+```
+expect to see:
+```console
 Validated.
 
 $  cardano-address script validate --recommended  "at_least 1 [$(cat addr_shared.1.xvk), $(cat addr_shared.2.xvk), $(cat addr_shared.2.xvk)]"
+```
+expect to see:
+```console
 Not validated: The list inside a script has duplicate keys (which is not recommended)..
 ```
 
@@ -489,9 +714,15 @@ Not validated: The list inside a script has duplicate keys (which is not recomme
 
 ```console
 $ cardano-address script preimage "all [addr_shared_vkh1zxt0uvrza94h3hv4jpv0ttddgnwkvdgeyq8jf9w30mcs6y8w3nq, addr_shared_vkh1y3zl4nqgm96ankt96dsdhc86vd5geny0wr7hu8cpzdfcqskq2cp]"
+```
+expect to see:
+```console
 008201828200581c1196fe3062e96b78dd959058f5adad44dd663519200f2495d17ef10d8200581c2445facc08d975d9d965d360dbe0fa63688ccc8f70fd7e1f01135380
 
 $  cardano-address script preimage "all [addr_shared_vkh1zxt0uvrza94h3hv4jpv0ttddgnwkvdgeyq8jf9w30mcs6y8w3nq, active_from 100, active_until 150]"
+```
+expect to see:
+```console
 008201838200581c1196fe3062e96b78dd959058f5adad44dd663519200f2495d17ef10d8204186482051896
 ```
 
@@ -500,6 +731,9 @@ $  cardano-address script preimage "all [addr_shared_vkh1zxt0uvrza94h3hv4jpv0ttd
 
 ```console
 $ cardano-address address payment --network-tag testnet < script.hash > script.addr
+```
+expect to see:
+```console
 addr_test1wpq0ghwy73wapjcdwqxm6ytwe66j8eccsmn9jptshrjerashp7y82
 ```
 
@@ -508,6 +742,9 @@ addr_test1wpq0ghwy73wapjcdwqxm6ytwe66j8eccsmn9jptshrjerashp7y82
 
 ```console
 $ cardano-address address payment --network-tag testnet "all [$(cat addr_shared.1.xvk), $(cat addr_shared.2.xvk)]"  > script.addr
+```
+expect to see:
+```console
 addr_test1wpq0ghwy73wapjcdwqxm6ytwe66j8eccsmn9jptshrjerashp7y82
 ```
 
@@ -516,8 +753,14 @@ addr_test1wpq0ghwy73wapjcdwqxm6ytwe66j8eccsmn9jptshrjerashp7y82
 
 ```console
 $ cardano-address script hash "all [$(cat addr_shared.1.xvk), $(cat addr_shared.2.xvk), active_from 100, active_until 120]" > script.stake.hash
+```
+expect to see:
+```console
 script1nugjzwfs2t9htl7s3dv9ajnd5us8pctpa8aj4ank8dnd6d6unul
 $ cardano-address address delegation $(cat script.stake.hash) < script.addr > base.addr
+```
+expect to see:
+```console
 addr_test1xpq0ghwy73wapjcdwqxm6ytwe66j8eccsmn9jptshrjera5lzysnjvzjed6ll5yttp0v5md8ypcwzc0flv40va3mvmwsl7grs3
 ```
 
@@ -526,6 +769,9 @@ addr_test1xpq0ghwy73wapjcdwqxm6ytwe66j8eccsmn9jptshrjera5lzysnjvzjed6ll5yttp0v5m
 
 ```console
 $ cardano-address address delegation "all [$(cat addr_shared.1.xvk), $(cat addr_shared.2.xvk), active_from 100, active_until 120]" < script.addr > base.addr
+```
+expect to see:
+```console
 addr_test1xpq0ghwy73wapjcdwqxm6ytwe66j8eccsmn9jptshrjera5lzysnjvzjed6ll5yttp0v5md8ypcwzc0flv40va3mvmwsl7grs3
 ```
 
@@ -534,6 +780,9 @@ addr_test1xpq0ghwy73wapjcdwqxm6ytwe66j8eccsmn9jptshrjera5lzysnjvzjed6ll5yttp0v5m
 
 ```console
 $ cardano-address address stake --network-tag testnet < script.stake.hash > stake.addr
+```
+expect to see:
+```console
 stake_test17z03zgfexpfvka0l6z94shk2dknjqu8pv85lk2hkwcakdhgx52yaj
 ```
 
@@ -542,6 +791,9 @@ stake_test17z03zgfexpfvka0l6z94shk2dknjqu8pv85lk2hkwcakdhgx52yaj
 
 ```console
 $ cardano-address address stake --network-tag testnet "all [$(cat addr_shared.1.xvk), $(cat addr_shared.2.xvk), active_from 100, active_until 120]" > stake.addr
+```
+expect to see:
+```console
 stake_test17z03zgfexpfvka0l6z94shk2dknjqu8pv85lk2hkwcakdhgx52yaj
 ```
 
@@ -550,33 +802,63 @@ stake_test17z03zgfexpfvka0l6z94shk2dknjqu8pv85lk2hkwcakdhgx52yaj
 
 ```console
 $ cat root.xsk
+```
+expect to see:
+```console
 root_xsk1hqzfzrgskgnpwskxxrv5khs7ess82ecy8za9l5ef7e0afd2849p3zryje8chk39nxtva0sww5me3pzkej4rvd5cae3q3v8eu7556n6pdrp4fdu8nsglynpmcppxxvfdyzdz5gfq3fefjepxhvqspmuyvmvqg8983
 
 $ cardano-address key child 1852H/1815H/0H/3/0 < root.xsk > drep.xsk
+```
+expect to see:
+```console
 drep_xsk1vpdsm49smzmdwhd4kjmm2mdyljjysm746rafjr7r8kgfanj849psw8pfm305g59wng0akw3qzppmfh6k5z7gx66h2vppu022m4eqaj26rh6d7en9tf9fu52hmysjzuacaxfmfya65h8jmddrclwf3kxl8snfs3eg
 
 $ cardano-address key public --with-chain-code < drep.xsk > drep.xvk
+```
+expect to see:
+```console
 drep_xvk1mg7xae48d7z4nntd35tey0jmclxaavwmk3kw2lkkt07p3s3x3yy45805manx2kj2neg40kfpy9em36vnkjfm4fw09k66837unrvd70qq8ewzf
 
 $ cardano-address key public --without-chain-code < drep.xsk > drep.vk
+```
+expect to see:
+```console
 drep_vk1mg7xae48d7z4nntd35tey0jmclxaavwmk3kw2lkkt07p3s3x3yysra6588
 
 $ cardano-address key hash --cip-0105 < drep.xvk > drep.vkh
+```
+expect to see:
+```console
 drep_vkh1sp5xhvmj0asztqfsjyta3cwvq7jppc2rwmfcsggp62va5hqgpg4
 
 $ cat drep.vkh | bech32
+```
+expect to see:
+```console
 80686bb3727f602581309117d8e1cc07a410e14376d3882101d299da
 
 $ cat drep.vkh | bech32 drep > drep.deprecated
+```
+expect to see:
+```console
 drep1sp5xhvmj0asztqfsjyta3cwvq7jppc2rwmfcsggp62va538nup0
 
 $ cat drep.deprecated | bech32
+```
+expect to see:
+```console
 80686bb3727f602581309117d8e1cc07a410e14376d3882101d299da
 
 $ cardano-address key hash < drep.xvk > drep.credential
+```
+expect to see:
+```console
 drep1y2qxs6anwflkqfvpxzg30k8pesr6gy8pgdmd8zppq8ffnksapjznm
 
 $ cat drep.credential | bech32
+```
+expect to see:
+```console
 2280686bb3727f602581309117d8e1cc07a410e14376d3882101d299da
 
 (there is the expected 0x22 prepended byte as it is drep key hash credential in accordance to CIP-0129. The corresponding key hash credential is '80686bb3727f602581309117d8e1cc07a410e14376d3882101d299da' and it is the same as in case of both `drep.vkh` and `drep.deprecated`).
@@ -588,25 +870,52 @@ $ cat drep.credential | bech32
 ```console
 
 $ cat drep.vkh
+```
+expect to see:
+```console
 drep_vkh1sp5xhvmj0asztqfsjyta3cwvq7jppc2rwmfcsggp62va5hqgpg4
 $ cat drep.deprecated
+```
+expect to see:
+```console
 drep1sp5xhvmj0asztqfsjyta3cwvq7jppc2rwmfcsggp62va538nup0
 $ cat drep.credential
+```
+expect to see:
+```console
 drep1y2qxs6anwflkqfvpxzg30k8pesr6gy8pgdmd8zppq8ffnksapjznm
 
 $ cardano-address script hash "all [$(cat drep.xvk), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 drep_script1eeccqnkak63vtp32l3epv5hcn8qpc2nxz4drxzadvj9q78ysk3q
 $ cardano-address script hash "all [$(cat drep.deprecated), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 drep_script1eeccqnkak63vtp32l3epv5hcn8qpc2nxz4drxzadvj9q78ysk3q
 $ cardano-address script hash "all [$(cat drep.credential), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 drep_script1eeccqnkak63vtp32l3epv5hcn8qpc2nxz4drxzadvj9q78ysk3q
 
 $ cardano-address script hash "all [$(cat drep.credential), active_from 100, active_until 120]" | bech32
+```
+expect to see:
+```console
 ce71804eddb6a2c5862afc721652f899c01c2a66155a330bad648a0f
 
 $ cardano-address script hash --with-byte "all [$(cat drep.credential), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 drep1y088rqzwmkm293vx9t78y9jjlzvuq8p2vc245vct44jg5rcyp8s2d
 $ cardano-address script hash --with-byte "all [$(cat drep.credential), active_from 100, active_until 120]" | bech32
+```
+expect to see:
+```console
 23ce71804eddb6a2c5862afc721652f899c01c2a66155a330bad648a0f
 
 (there is the expected 0x23 prepended byte as it is drep script hash credential in accordance to CIP-0129. The corresponding script hash credential is 'ce71804eddb6a2c5862afc721652f899c01c2a66155a330bad648a0f' and it is the same irrespective of how the script hash is constructed, i.e.,  from `drep.vkh`, `drep.credential` or `drep.deprecated`).
@@ -618,33 +927,63 @@ $ cardano-address script hash --with-byte "all [$(cat drep.credential), active_f
 
 ```console
 $ cat root.xsk
+```
+expect to see:
+```console
 root_xsk1hqzfzrgskgnpwskxxrv5khs7ess82ecy8za9l5ef7e0afd2849p3zryje8chk39nxtva0sww5me3pzkej4rvd5cae3q3v8eu7556n6pdrp4fdu8nsglynpmcppxxvfdyzdz5gfq3fefjepxhvqspmuyvmvqg8983
 
 $ cardano-address key child 1852H/1815H/0H/4/0 < root.xsk > cold.xsk
+```
+expect to see:
+```console
 cc_cold_xsk1fp4megtpn4vu4cug2lmsyhg4xvnnar55q6k8wp5e6f2h8jz849ph8v8jhm0qffw8v6ut7x8wqvr07m9ccaspezrkexcafu284w6gpqexspqujj8glw0d70rwuemk0924zjhscgcfnevy29zr0fc57tvjmg7jvvqh
 
 $ cardano-address key public --with-chain-code < cold.xsk > cold.xvk
+```
+expect to see:
+```console
 cc_cold_xvk1dg8d5du0v4ukqkfgset50xncudhwlfzz2p6epv096x0ndl8jsgzzdqzpe9yw37u7mu7xaenhv7242990ps3sn8jcg52yx7n3fuke9kst5t2py
 
 $ cardano-address key public --without-chain-code < cold.xsk > cold.vk
+```
+expect to see:
+```console
 cc_cold_vk1dg8d5du0v4ukqkfgset50xncudhwlfzz2p6epv096x0ndl8jsgzqmwj2x5
 
 $ cardano-address key hash --cip-0105 < cold.xvk > cold.vkh
+```
+expect to see:
+```console
 cc_cold_vkh1d7yw362prvnae5fc8063xdeapws9ptzdgjkqd4dk3qddctn5rch
 
 $ cat cold.vkh  | bech32
+```
+expect to see:
+```console
 6f88e8e9411b27dcd1383bf513373d0ba050ac4d44ac06d5b6881adc
 
 $ cat cold.vkh  | bech32 cc_cold > cold.deprecated
+```
+expect to see:
+```console
 cc_cold1d7yw362prvnae5fc8063xdeapws9ptzdgjkqd4dk3qddccyzfjm
 
 $ cat cold.deprecated | bech32
+```
+expect to see:
+```console
 6f88e8e9411b27dcd1383bf513373d0ba050ac4d44ac06d5b6881adc
 
 $ cardano-address key hash < cold.xvk > cold.credential
+```
+expect to see:
+```console
 cc_cold1zfhc368fgydj0hx38qal2yeh8596q59vf4z2cpk4k6yp4hqy3mpsx
 
 $ cat cold.credential | bech32
+```
+expect to see:
+```console
 126f88e8e9411b27dcd1383bf513373d0ba050ac4d44ac06d5b6881adc
 
 (there is the expected 0x12 prepended byte as it is cc cold key hash credential in accordance to CIP-0129. The corresponding key hash is '6f88e8e9411b27dcd1383bf513373d0ba050ac4d44ac06d5b6881adc' and it is the same as in case of both `cold.vkh` and `cold.deprecated`).
@@ -656,25 +995,52 @@ $ cat cold.credential | bech32
 ```console
 
 $ cat cold.vkh
+```
+expect to see:
+```console
 cc_cold_vkh1d7yw362prvnae5fc8063xdeapws9ptzdgjkqd4dk3qddctn5rch
 $ cat cold.deprecated
+```
+expect to see:
+```console
 cc_cold1d7yw362prvnae5fc8063xdeapws9ptzdgjkqd4dk3qddccyzfjm
 $ cat cold.credential
+```
+expect to see:
+```console
 cc_cold1zfhc368fgydj0hx38qal2yeh8596q59vf4z2cpk4k6yp4hqy3mpsx
 
 $ cardano-address script hash "all [$(cat cold.xvk), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 cc_cold_script18zy6g0vu7ajzmzamkvysfzc0nnfpf8w3n7404xxhaz2jqexhzw5
 $ cardano-address script hash "all [$(cat cold.deprecated), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 cc_cold_script18zy6g0vu7ajzmzamkvysfzc0nnfpf8w3n7404xxhaz2jqexhzw5
 $ cardano-address script hash "all [$(cat cold.credential), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 cc_cold_script18zy6g0vu7ajzmzamkvysfzc0nnfpf8w3n7404xxhaz2jqexhzw5
 
 $ cardano-address script hash "all [$(cat cold.credential), active_from 100, active_until 120]" | bech32
+```
+expect to see:
+```console
 3889a43d9cf7642d8bbbb309048b0f9cd2149dd19faafa98d7e89520
 
 $ cardano-address script hash --with-byte "all [$(cat cold.credential), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 cc_cold1zvugnfpannmkgtvthwesjpytp7wdy9ya6x06475c6l5f2gqcxtssu
 $ cardano-address script hash --with-byte "all [$(cat cold.credential), active_from 100, active_until 120]" | bech32
+```
+expect to see:
+```console
 133889a43d9cf7642d8bbbb309048b0f9cd2149dd19faafa98d7e89520
 
 (there is the expected 0x13 prepended byte as it is cc cold script hash credential in accordance to CIP-0129. The corresponding script hash credential is '3889a43d9cf7642d8bbbb309048b0f9cd2149dd19faafa98d7e89520' and it is the same irrespective of how the script hash is constructed, i.e.,  from `cold.vkh`, `cold.credential` or `cold.deprecated`).
@@ -685,33 +1051,63 @@ $ cardano-address script hash --with-byte "all [$(cat cold.credential), active_f
 
 ```console
 $ cat root.xsk
+```
+expect to see:
+```console
 root_xsk1hqzfzrgskgnpwskxxrv5khs7ess82ecy8za9l5ef7e0afd2849p3zryje8chk39nxtva0sww5me3pzkej4rvd5cae3q3v8eu7556n6pdrp4fdu8nsglynpmcppxxvfdyzdz5gfq3fefjepxhvqspmuyvmvqg8983
 
 $ cardano-address key child 1852H/1815H/0H/5/0 < root.xsk > hot.xsk
+```
+expect to see:
+```console
 cc_hot_xsk14z9ktfggpsm8sqd5ecepv9f4estxkukfualezuxrfry0mjj849puxsq7ch3tw67d7rfr4smvaa2u3tkfu675mxw85zlpafp6llfex7re88wh22s8f83ehn6uejgfrm74x8y98xlwdmgy64ufctwernp64umnr5uk
 
 $ cardano-address key public --with-chain-code < hot.xsk > hot.xvk
+```
+expect to see:
+```console
 cc_hot_xvk1a5q4r34xzm0r6y728d4gmrl7jvrfuh7r022k7wh5mzwmyg7d7l3hjwwaw54qwj0rn084enysj8ha2vwg2wd7umksf4tcnskaj8xr4tcempwly
 
 $ cardano-address key public --without-chain-code < hot.xsk > hot.vk
+```
+expect to see:
+```console
 cc_hot_vk1a5q4r34xzm0r6y728d4gmrl7jvrfuh7r022k7wh5mzwmyg7d7l3s3fzqkv
 
 $ cardano-address key hash --cip-0105 < hot.xvk > hot.vkh
+```
+expect to see:
+```console
 cc_hot_vkh1xk94yxqufrm5sjfv535hlnky8cf9fzg5kvp3r4qz9d5ezk2qmuz
 
 $ cat hot.vkh | bech32
+```
+expect to see:
+```console
 358b52181c48f748492ca4697fcec43e12548914b30311d4022b6991
 
 $ cat hot.vkh  | bech32 cc_hot > hot.deprecated
+```
+expect to see:
+```console
 cc_hot1xk94yxqufrm5sjfv535hlnky8cf9fzg5kvp3r4qz9d5ezua5p8v
 
 $ cat hot.deprecated | bech32
+```
+expect to see:
+```console
 358b52181c48f748492ca4697fcec43e12548914b30311d4022b6991
 
 $ cardano-address key hash < hot.xvk > hot.credential
+```
+expect to see:
+```console
 cc_hot1qg6ck5scr3y0wjzf9jjxjl7wcslpy4yfzjesxyw5qg4knyg9ckh0d
 
 $ cat hot.credential | bech32
+```
+expect to see:
+```console
 02358b52181c48f748492ca4697fcec43e12548914b30311d4022b6991
 
 (there is the expected 0x02 prepended byte as it is cc cold key hash credential in accordance to CIP-0129. The corresponding key hash credential is '358b52181c48f748492ca4697fcec43e12548914b30311d4022b6991' and it is the same as in case of both `hot.vkh` and `hot.deprecated`).
@@ -723,25 +1119,52 @@ $ cat hot.credential | bech32
 ```console
 
 $ cat hot.vkh
+```
+expect to see:
+```console
 cc_hot_vkh1xk94yxqufrm5sjfv535hlnky8cf9fzg5kvp3r4qz9d5ezk2qmuz
 $ cat hot.deprecated
+```
+expect to see:
+```console
 cc_hot1xk94yxqufrm5sjfv535hlnky8cf9fzg5kvp3r4qz9d5ezua5p8v
 $ cat hot.credential
+```
+expect to see:
+```console
 cc_hot1qg6ck5scr3y0wjzf9jjxjl7wcslpy4yfzjesxyw5qg4knyg9ckh0d
 
 $ cardano-address script hash "all [$(cat hot.xvk), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 cc_hot_script14xptkz0f6kv85nctxuycj0vm73u7ajuz4rglxn5qgzncsdq80mv
 $ cardano-address script hash "all [$(cat hot.deprecated), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 cc_hot_script14xptkz0f6kv85nctxuycj0vm73u7ajuz4rglxn5qgzncsdq80mv
 $ cardano-address script hash "all [$(cat hot.credential), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 cc_hot_script14xptkz0f6kv85nctxuycj0vm73u7ajuz4rglxn5qgzncsdq80mv
 
 $ cardano-address script hash "all [$(cat hot.credential), active_from 100, active_until 120]" | bech32
+```
+expect to see:
+```console
 a982bb09e9d5987a4f0b3709893d9bf479eecb82a8d1f34e8040a788
 
 $ cardano-address script hash --with-byte "all [$(cat hot.credential), active_from 100, active_until 120]"
+```
+expect to see:
+```console
 cc_hot1qw5c9wcfa82es7j0pvmsnzfan068nmkts25dru6wspq20zqsumm4q
 $ cardano-address script hash --with-byte "all [$(cat hot.credential), active_from 100, active_until 120]" | bech32
+```
+expect to see:
+```console
 03a982bb09e9d5987a4f0b3709893d9bf479eecb82a8d1f34e8040a788
 
 (there is the expected 0x03 prepended byte as it is cc hot script hash credential in accordance to CIP-0129. The corresponding script hash credential is 'a982bb09e9d5987a4f0b3709893d9bf479eecb82a8d1f34e8040a788' and it is the same irrespective of how the script hash is constructed, i.e.,  from `hot.vkh`, `hot.credential` or `hot.deprecated`).
@@ -753,18 +1176,33 @@ $ cardano-address script hash --with-byte "all [$(cat hot.credential), active_fr
 
 ```console
 $ cat drep.xsk
+```
+expect to see:
+```console
 drep_xsk1vpdsm49smzmdwhd4kjmm2mdyljjysm746rafjr7r8kgfanj849psw8pfm305g59wng0akw3qzppmfh6k5z7gx66h2vppu022m4eqaj26rh6d7en9tf9fu52hmysjzuacaxfmfya65h8jmddrclwf3kxl8snfs3eg
 
 $ cardano-address key private --signing-key < drep.xsk
+```
+expect to see:
+```console
 drep_sk1vpdsm49smzmdwhd4kjmm2mdyljjysm746rafjr7r8kgfanj849psw8pfm305g59wng0akw3qzppmfh6k5z7gx66h2vppu022m4eqajg5xmwma
 
 $ cardano-address key private --signing-key < drep.xsk | bech32
+```
+expect to see:
+```console
 605b0dd4b0d8b6d75db5b4b7b56da4fca4486fd5d0fa990fc33d909ece47a943071c29dc5f4450ae9a1fdb3a201043b4df56a0bc836b5753021e3d4add720ec9
 
 $ cardano-address key private --chain-code < drep.xsk
+```
+expect to see:
+```console
 5a1df4df66655a4a9e5157d9212173b8e993b493baa5cf2db5a3c7dc98d8df3c
 
 $ echo drep_xsk1vpdsm49smzmdwhd4kjmm2mdyljjysm746rafjr7r8kgfanj849psw8pfm305g59wng0akw3qzppmfh6k5z7gx66h2vppu022m4eqaj26rh6d7en9tf9fu52hmysjzuacaxfmfya65h8jmddrclwf3kxl8snfs3eg | cardano-address key inspect
+```
+expect to see:
+```console
 {
     "chain_code": "5a1df4df66655a4a9e5157d9212173b8e993b493baa5cf2db5a3c7dc98d8df3c",
     "extended_key": "605b0dd4b0d8b6d75db5b4b7b56da4fca4486fd5d0fa990fc33d909ece47a943071c29dc5f4450ae9a1fdb3a201043b4df56a0bc836b5753021e3d4add720ec9",
@@ -779,18 +1217,33 @@ $ echo drep_xsk1vpdsm49smzmdwhd4kjmm2mdyljjysm746rafjr7r8kgfanj849psw8pfm305g59w
 
 ```console
 $ cat drep
+```
+expect to see:
+```console
 drep1sp5xhvmj0asztqfsjyta3cwvq7jppc2rwmfcsggp62va538nup0
 
 $ cardano-address script validate "all [$(cat drep),active_from 5001]"
+```
+expect to see:
+```console
 Validated.
 
 $ cardano-address script validate "all [$(cat drep),$(cat hot)]"
+```
+expect to see:
+```console
 Not validated: All keys of a script must have the same role: payment, delegation, policy, representative, committee cold or committee hot.
 
 $ cardano-address script preimage "all [$(cat drep),active_from 5001]"
+```
+expect to see:
+```console
 008201828200581c80686bb3727f602581309117d8e1cc07a410e14376d3882101d299da8204191389
 
 $ cardano-address script hash "all [$(cat drep),active_from 5001]"
+```
+expect to see:
+```console
 drep_script1608hfeauc3hvfpvdcqwfdhyd2cfm6j42rp62ckqrskazy57w2zt
 ```
 
@@ -801,18 +1254,30 @@ drep_script1608hfeauc3hvfpvdcqwfdhyd2cfm6j42rp62ckqrskazy57w2zt
 ```console
 Let's assume we have mnemonic
 $ cat recovery-phrase.prv
+```
+expect to see:
+```console
 nothing heart matrix fly sleep slogan tomato pulse what roof rail since plastic false enlist
 
 Construct root extended private key
 $ cardano-address key from-recovery-phrase Shelley < recovery-phrase.prv > root.xprv
+```
+expect to see:
+```console
 root_xsk1apjwjs3ksgm5mnnk0cc5v5emgv0hmafmmy8tffay5s2ffk69830whwznr46672ruucdzwwtv9upv72e4ylrypyz5m6cyh0p00t7n3u3agt20lv32j4kxcqlkzu78nzjx0ysxxlc2ghfz9prxfmrds802xsuhh404~
 
 Construct extended private key for account ix=0H, role=0 and address ix=0
 $ cardano-address key child 1852H/1815H/0H/0/0 < root.xprv > key.xsk
+```
+expect to see:
+```console
 addr_xsk1kzl5vgev0u843tfnxqcwg0lmaf7zhdhczddaqhas6dp6m6z98302e3avp8mhu94kxkpj2gss064f74km3rrptafh4fsztekz8k5c469shcvx35wrdmus3xemp984lcwhs0jdtl4pfcsrfspe00h9pej6rg8drvcv
 
 Create extended signing key using cardano-cli
 $ cardano-cli key convert-cardano-address-key --shelley-payment-key --signing-key-file key.xsk --out-file key.skey
+```
+expect to see:
+```console
 {
     "type": "PaymentExtendedSigningKeyShelley_ed25519_bip32",
     "description": "",
@@ -827,6 +1292,9 @@ The cborhex here contains of 4 parts:
 
 Create corresponding verification key using cardano-cli
 $ cardano-cli key verification-key --signing-key-file key.skey --verification-key-file key.vkey
+```
+expect to see:
+```console
 {
     "type": "PaymentExtendedVerificationKeyShelley_ed25519_bip32",
     "description": "",
@@ -843,33 +1311,54 @@ Rule for prefixes:
 
 Create verification key hash using cardano-cli
 $ cardano-cli address key-hash --payment-verification-key-file key.vkey > key.hash
+```
+expect to see:
+```console
 0185545935760c5e370d01e6f4fedbb89b7fd79e115f2837cfab9ea8
 
 Alternatively, we can create non-extended key
 $ cardano-address key public --without-chain-code < key.xsk > key.vk
+```
+expect to see:
+```console
 addr_vk1lwalvsgwy3fj7d0fy707hvy96txqtvaj4ksa7al2r9g7k6208q6qmrv9k3
 
 Also, take notice that signing key can be translated to cborhex:
 $ cat key.xsk | bech32
+```
+expect to see:
+```console
 b0bf46232c7f0f58ad333030e43ffbea7c2bb6f8135bd05fb0d343ade8453c5eacc7ac09f77e16b635832522107eaa9f56db88c615f537aa6025e6c23da98ae8b0be1868d1c36ef9089b3b094f5fe1d783e4d5fea14e2034c0397bee50e65a1a
 (signing key and chain code appended)
 
 Moreover, basing on key.vk one can get hash
 $ cardano-cli address key-hash --payment-verification-key $(cat key.vk) > key1.hash
+```
+expect to see:
+```console
 0185545935760c5e370d01e6f4fedbb89b7fd79e115f2837cfab9ea8
 
 Within cardano-addresses one can get cborhex of verification key (with chain code)
 $ cardano-address key public --with-chain-code < key.xsk | bech32
+```
+expect to see:
+```console
 fbbbf6410e24532f35e9279febb085d2cc05b3b2ada1df77ea1951eb694f3834b0be1868d1c36ef9089b3b094f5fe1d783e4d5fea14e2034c0397bee50e65a1a
 (verification key and chain code appended)
 
 Within cardano-addresses one can get cborhex of verification key (without chain code)
 $ cardano-address key public --without-chain-code < key.xsk | bech32
+```
+expect to see:
+```console
 fbbbf6410e24532f35e9279febb085d2cc05b3b2ada1df77ea1951eb694f3834
 (verification key without chain code)
 
 Then, we can get compute hash (but here we need to use without chain code):
 $ cardano-address key public --without-chain-code < key.xsk | cardano-address key hash | bech32
+```
+expect to see:
+```console
 0185545935760c5e370d01e6f4fedbb89b7fd79e115f2837cfab9ea8
 
 ```
@@ -878,16 +1367,31 @@ $ cardano-address key public --without-chain-code < key.xsk | cardano-address ke
 
 ``` console
 $ nix develop
+```
+expect to see:
+```console
 
 # building
 $ cabal build all
+```
+expect to see:
+```console
 
 # testing
 $ export LANG=C.UTF-8
+```
+expect to see:
+```console
 $ cabal test cardano-addresses:unit
+```
+expect to see:
+```console
 
 # installing executable locally
 $ cabal install cardano-address
+```
+expect to see:
+```console
 ```
 
 ## Docker Image
@@ -899,6 +1403,9 @@ Please make sure you have [just](https://github.com/casey/just) installed as `ju
 ```console
 $ just clean-build-docker
 ```
+expect to see:
+```console
+```
 
 ### Run
 
@@ -906,6 +1413,9 @@ Use the auto-remove flag `--rm` when running commands.
 
 ```console
 $ docker run --rm cardano-address recovery-phrase generate --size 15
+```
+expect to see:
+```console
 dismiss grit bacon glare napkin satisfy tribe proud carpet bench fantasy rich history face north
 ```
 
@@ -913,6 +1423,9 @@ Use the interactive flag `-i` when piping stdin
 
 ```console
 $ echo "addr1gqtnpvdhqrtpd4g424fcaq7k0ufuzyadt7djygf8qdyzevuph3wczvf2dwyx5u" | docker run --rm -i cardano-addresses address inspect
+```
+expect to see:
+```console
 {
     "address_style": "Shelley",
     "stake_reference": "by pointer",
